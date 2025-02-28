@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace src\library\Library;
+namespace SRC\library;
 class Library{
 
     

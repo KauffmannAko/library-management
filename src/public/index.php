@@ -2,14 +2,15 @@
 
 declare(strict_types=1);
 
-require_once __DIR__ ."/../library/Library.php";
-require_once __DIR__ ."/../library/Book.php";
 
-use src\library\Book\Book;
-use src\library\Library\Library;
+require __DIR__ ."/../vendor/autoload.php";
 
-$mybook = new Book();
-$myLib = new Library();
-var_dump($mybook);
-echo'<br>';
-var_dump($myLib);
+use SRC\library\Book;
+use SRC\library\Library;
+
+
+$id = new \Ramsey\Uuid\UuidFactory();
+$uuid = $id->uuid4()->toString();
+$mybook = new Book( $uuid,'The Great Gatsby','F. Scott Fitzgerald',
+'978-3-16-148410-0','available');
+$mybook->checkOutBook();
